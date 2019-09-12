@@ -53,8 +53,18 @@ public class UserController {
     }
     @RequestMapping("/main")
     public String main(Map map,HttpServletRequest request){
+        //新
+        User u = new User() ;
+        u.setUserID("admin");
+        u.setPassword("admin");
+        List<User> l = userService.login(u) ;
+
         //角色权限的分配
         HttpSession session = request.getSession();
+
+        //新
+        session.setAttribute("user", l.get(0));
+
         User user= (User)session.getAttribute("user");
         List<Map> list = userService.getFunction(user.getUserID());
         map.put("menuList",list);
