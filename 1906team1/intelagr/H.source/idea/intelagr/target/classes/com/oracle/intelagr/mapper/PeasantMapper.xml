@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oracle.intelagr.mapper.PeasantMapper">
+    <select id="selectAll" resultType="Peasant">
+        select * from m_peasant
+</select>
+    <select id="count" resultType="int">
+        select count(*) from m_peasant
+    </select>
+    <select id="selectById" resultType="Peasant" parameterType="java.lang.String">
+        select * from m_peasant
+        where contractorID = #{contractorID}
+    </select>
+</mapper>

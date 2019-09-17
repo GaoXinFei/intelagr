@@ -4,8 +4,7 @@ import java.util.Date;
 
 
 
-public class Contract
-{
+public class Contract {
 	private Integer id;
 	//承包方代码
 	private String contractorCode;

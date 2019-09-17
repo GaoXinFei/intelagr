@@ -48,7 +48,7 @@
 				<tr>
 					<td class="table_common_td_label_style">申请批次号：</td>
 					<td class="table_common_td_txt_style">
-						PT20170521000003
+						${pt}
 					</td>
 				</tr>
 				<tr>
@@ -412,7 +412,7 @@ function addLandRegD(){
 	    height: 480,
 	    closed: false,
 	    cache: false,
-	    href: 'geneLandRegDEdit.jsp',
+	    href: '/geneLandReg/geneLandRegDEdit',
 	    modal: true
 	});
 }

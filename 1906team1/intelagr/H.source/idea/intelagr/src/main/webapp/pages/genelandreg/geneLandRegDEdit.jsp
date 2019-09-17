@@ -352,7 +352,8 @@ function closeEditDialog(){
 	$('#addDialog').dialog('close');
 }
 //确权查询方法
-function expandInfo(){ 
+function expandInfo(){
+
 	//----只根据证件类型和证件号码查询
 	if($("#idType").combobox('getValue')==""){
 		$.messager.alert('警告','请选择证件类型！','warning');
@@ -376,7 +377,8 @@ function expandInfo(){
 	var idType = $("#idType").combobox('getValue');
 	showLoading();
 	lastQcIdNumber = contractorId;
-	Public.ajaxGet('../api/getContratorInfo?contratorId=' + contractorId + "&contractorIDType=" + idType +"&year=${year}", {}, function(e) {
+    alert("fsfsfs") ;
+	Public.ajaxGet('/geneLandReg/peasant?contratorId=' + contractorId + "&contractorIDType=" + idType +"&year=${year}", {}, function(e) {
 		hideLoading();
 		if (0 == e.status) {
 			clearDatasTable();
@@ -407,6 +409,7 @@ function expandInfo(){
 			clearDatasTable();
 		}
 	});
+
 }
 
 function clearDatasTable(){
